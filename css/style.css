@@ -1,0 +1,337 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-out;
+}
+
+body.loaded .logo a {
+    transform: scale(1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107; /* Un color de acento */
+}
+
+.section {
+    padding: 80px 20px;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #ffc107;
+}
+
+.bg-light {
+    background-color: #eee;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #007bff; /* Un color principal llamativo */
+    color: #fff;
+    padding: 150px 20px 100px;
+    text-align: center;
+    position: relative; /* Para posicionar el fondo parallax */
+    overflow: hidden; /* Para que el contenido no se salga */
+    background-image: url('img/hero-background.jpg'); /* Reemplaza con tu imagen */
+    background-size: 120% auto; /* Un poco más grande para permitir el movimiento */
+    background-position: center;
+    transition: background-position 0.3s ease-out;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/hero-background.jpg'); /* Reemplaza con tu imagen */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Asegura que esté detrás del contenido */
+}
+
+.hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative; /* Para que el contenido esté encima del fondo parallax */
+}
+
+.hero img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #fff;
+    transition: transform 0.2s ease-out;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: left;
+}
+
+.skill-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+}
+
+.skill-item.visible {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.skill-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.skill-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-item ul li {
+    margin-bottom: 5px;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-item {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-item h3 {
+    padding: 15px;
+    margin: 0;
+    font-size: 1.5rem;
+    background-color: #f9f9f9;
+}
+
+.project-item p {
+    padding: 15px;
+    margin: 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.project-item a {
+    display: block;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.project-item a:hover {
+    background-color: #c82333;
+}
+
+/* Experience Section */
+.experience-list {
+    text-align: left;
+}
+
+.experience-item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.experience-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.experience-item .date {
+    color: #777;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.experience-item ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.experience-item ul li {
+    margin-bottom: 5px;
+}
+
+/* Contact Section */
+.contact-info {
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: #007bff;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para el fade-in y slide-in inicial */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Duración y tipo de transición */
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+.slide-in {
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.slide-in.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
